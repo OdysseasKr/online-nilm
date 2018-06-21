@@ -5,7 +5,7 @@ This is a 'lightweight' recurrent neural network. Inspired by the RNN in NeuralN
 ## To set up the project
 Run
 ```bash
-python gen.py
+python gen.py <path to your UKDALE h5>
 ```
 
 This will create the trainsets and download the Neural NILM test set. The trainset comes from the data used in Neural NILM. This may take some time.
