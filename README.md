@@ -10,10 +10,10 @@ All code is written using Keras and Tensorflow.
 ## The networks
 In each folder you can find a README with instructions on how to run the experiments. For every network you will find 4 Python files:
 
-- experiment.py: Contains the code for running the experiment. Each experiment includes training and evaluating the network.
+- experiment.py: Code for running the experiment. Each experiment includes training and evaluating the network.
 - gen.py: Downloads all necessary resources and generates a trainset and a testset.
-- model.py: Contains the network architecture.
-- metrics.py: Contains the metrics used to evaluate the network.
+- model.py: The network architecture.
+- metrics.py: The metrics used to evaluate the network.
 
 The experiments are available for the following appliances from the UKDALE dataset:
 - Dishwasher
@@ -21,3 +21,7 @@ The experiments are available for the following appliances from the UKDALE datas
 - Kettle
 - Microwave
 - Washing Machine
+
+## Related works
+Neural NILM: https://arxiv.org/pdf/1507.06594.pdf  
+Original Sequence-to-point: https://arxiv.org/pdf/1612.09106v3.pdf.
