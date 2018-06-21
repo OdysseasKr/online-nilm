@@ -6,8 +6,6 @@ Improvements:
 - Smaller window lengths (5-10 mins) to make it suitable for real-time applications.
 - Added dropout
 
-Paper for the original Sequence-to-point Network: https://arxiv.org/pdf/1612.09106v3.pdf.
-
 ## To set up the project
 Run
 ```bash
@@ -34,7 +32,7 @@ import the experiment function and use it in your code
 from experiment import experiment
 experiment('kettle', 0, 120)
 ```
-This will train the network for 120 epochs. You can resume training lie this:
+This will train the network for 120 epochs. You can resume training like this:
 ```python
 experiment('kettle', 120, 130)
 ```
