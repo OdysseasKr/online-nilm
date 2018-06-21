@@ -29,7 +29,7 @@ import the experiment function and use it in your code
 from experiment import experiment
 experiment('kettle', 0, 120)
 ```
-This will train the network for 120 epochs. You can resume training lie this:
+This will train the network for 120 epochs. You can resume training like this:
 ```python
 experiment('kettle', 120, 130)
 ```
