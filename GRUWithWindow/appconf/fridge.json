@@ -1,0 +1,12 @@
+{
+    "synth_key": "fridge",
+    "nilmtk_key": "fridge",
+    "memax": 200,
+    "std": 400,
+    "mean": 200,
+    "on_threshold": 50,
+    "train_buildings": [1,2,4],
+    "test_building": 5,
+    "lookback": 50,
+    "save_path": "experiments/fridge/"
+}

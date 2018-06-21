@@ -1,0 +1,12 @@
+{
+    "synth_key": "dish_asher",
+    "nilmtk_key": "dish washer",
+    "memax": 3000,
+    "std": 1000,
+    "mean": 700,
+    "on_threshold": 10,
+    "train_buildings": [1,2],
+    "test_building": 5,
+    "lookback": 50,
+    "save_path": "experiments/dish_washer/"
+}

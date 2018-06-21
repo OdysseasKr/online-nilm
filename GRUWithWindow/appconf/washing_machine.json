@@ -1,0 +1,12 @@
+{
+    "synth_key": "washing_machine",
+    "nilmtk_key": "washer dryer",
+    "memax": 2500,
+    "std": 700,
+    "mean":400,
+    "on_threshold": 20,
+    "train_buildings": [1,5],
+    "test_building": 2,
+    "lookback": 100,
+    "save_path": "experiments/washing_machine/"
+}

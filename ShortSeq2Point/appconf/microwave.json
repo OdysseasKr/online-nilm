@@ -1,0 +1,12 @@
+{
+    "synth_key": "microwave",
+    "nilmtk_key": "microwave",
+    "memax": 3000,
+    "std": 800,
+    "mean": 500,
+    "on_threshold": 200,
+    "train_buildings": [1,2],
+    "test_building": 5,
+    "lookback": 50,
+    "save_path": "experiments/microwave/"
+}
