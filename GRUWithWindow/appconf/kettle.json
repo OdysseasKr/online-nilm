@@ -4,7 +4,7 @@
     "memax": 3000,
     "std": 1000,
     "mean": 700,
-    "on_threshold": 2000,
+    "on_threshold": 1600,
     "train_buildings": [1,2,3,4],
     "test_building": 5,
     "lookback": 50,

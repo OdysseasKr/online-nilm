@@ -66,29 +66,29 @@ def experiment(key_name, start_e, end_e):
 	model = create_model(input_window)
 
 	# Train model and save checkpoints
-	start_e
-	if start_e>0:
-		model = load_model(save_path+"CHECKPOINT-{}-{}epochs.h5".format(key_name, start_e))
+	if start_e > 0:
+		model = load_model(save_path+"CHECKPOINT-{}-{}epochs.hdf5".format(key_name, start_e))
 
-	filepath = save_path+"CHECKPOINT-"+key_name+"-{epoch:01d}epochs.hdf5"
-	checkpoint = ModelCheckpoint(filepath, verbose=1, save_best_only=False)
-	history = model.fit(X_train, y_train, batch_size=128, epochs=(end_e - start_e), shuffle=True, initial_epoch=start_e, callbacks=[checkpoint])
-	losses = history.history['loss']
+	if end_e > start_e:
+		filepath = save_path+"CHECKPOINT-"+key_name+"-{epoch:01d}epochs.hdf5"
+		checkpoint = ModelCheckpoint(filepath, verbose=1, save_best_only=False)
+		history = model.fit(X_train, y_train, batch_size=128, epochs=(end_e - start_e), shuffle=True, initial_epoch=start_e, callbacks=[checkpoint])
+		losses = history.history['loss']
 
-	model.save("{}CHECKPOINT-{}-{}epochs.h5".format(save_path, key_name, end_e),model)
+		model.save("{}CHECKPOINT-{}-{}epochs.hdf5".format(save_path, key_name, end_e),model)
 
-	# Save training loss per epoch
-	try:
-		a = np.loadtxt("{}losses.csv".format(save_path))
-		losses = np.append(a,losses)
-	except:
-		pass
-	np.savetxt("{}losses.csv".format(save_path), losses, delimiter=",")
+		# Save training loss per epoch
+		try:
+			a = np.loadtxt("{}losses.csv".format(save_path))
+			losses = np.append(a,losses)
+		except:
+			pass
+		np.savetxt("{}losses.csv".format(save_path), losses, delimiter=",")
 
 	# ======= Disaggregation phase
-	mains, meter= opends(test_building,key_name)
+	mains, meter = opends(test_building, key_name)
 	X_test = normalize(mains, mamax, mean, std)
-	y_test = normalize(meter, memax, mean, std)
+	y_test = meter
 
 	# Predict data
 	X_batch, Y_batch = gen_batch(X_test, y_test, len(X_test)-input_window, 0, input_window)
@@ -99,7 +99,7 @@ def experiment(key_name, start_e, end_e):
 	# Save results
 	np.save("{}pred-{}-epochs{}".format(save_path, key_name, end_e), pred)
 
-	rpaf = metrics.recall_precision_accuracy_f1(pred, Y_batch,threshold)
+	rpaf = metrics.recall_precision_accuracy_f1(pred, Y_batch, threshold)
 	rete = metrics.relative_error_total_energy(pred, Y_batch)
 	mae = metrics.mean_absolute_error(pred, Y_batch)
 
