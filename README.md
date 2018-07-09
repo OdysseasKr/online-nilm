@@ -3,6 +3,8 @@ Here you can find the code for the two proposed Neural Network architectures fro
 
 > Sliding Window Approach for Online Energy Disaggregation Using Artificial Neural Networks, O. Krystalakos, C. Nalmpantis and D. Vrakas, SETN, 2018
 
+Full Paper: [3200947.3201011](https://dl.acm.org/citation.cfm?doid=3200947.3201011)
+
 All code is written using Keras and Tensorflow.
 
 **Requires NILMTK to run. You can find it here:** https://github.com/nilmtk/nilmtk.
