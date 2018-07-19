@@ -7,6 +7,8 @@ Full Paper: [3200947.3201011](https://dl.acm.org/citation.cfm?doid=3200947.32010
 
 All code is written using Keras and Tensorflow.
 
+You can find NILMTK-compatible versions of these networks on https://github.com/OdysseasKr/neural-disaggregator.
+
 **Requires NILMTK to run. You can find it here:** https://github.com/nilmtk/nilmtk.
 
 ## The networks
