@@ -122,9 +122,10 @@ def experiment(key_name, start_e, end_e):
 
 
 if __name__ == "__main__":
-	key_name = sys.argv[1]
-	if (key_name == ""):
-		print("    Usage: synth-test.py <devicename>")
+	if len(sys.argv) == 1 or sys.argv[1] == "":
+		print("    Usage: experiment.py <devicename>")
 		print("    Available device names: {}", allowed_key_names)
 		exit()
+
+	key_name = sys.argv[1]
 	experiment(key_name, 0, 7)
