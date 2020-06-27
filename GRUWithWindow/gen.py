@@ -83,9 +83,8 @@ def opends(building, meter):
 
 def download_dataset():
 	print("Downloading dataset for the first time")
-	testfile = urllib.URLopener()
 	os.makedirs("dataset")
-	testfile.retrieve("http://jack-kelly.com/files/neuralnilm/NeuralNILM_data.zip", "dataset/ds.zip")
+	urllib.request.urlretrieve("http://jack-kelly.com/files/neuralnilm/NeuralNILM_data.zip", "dataset/ds.zip")
 	import zipfile
 
 	zip_ref = zipfile.ZipFile('dataset/ds.zip', 'r')
@@ -121,7 +120,7 @@ if __name__ == "__main__":
 		for i, building in enumerate(house_keys):
 			ds.set_window(start=(ukdale_windows[building-1])[0], end=(ukdale_windows[building-1])[1])
 			elec = ds.buildings[building].elec
-			meter = elec[conf["nilmtk_key"].encode("ascii")]
+			meter = elec[conf["nilmtk_key"]]
 			mains = elec.mains()
 			all_x, all_y = create_trainset(meter, mains, train_size, window_size)
 			all_x = all_x
